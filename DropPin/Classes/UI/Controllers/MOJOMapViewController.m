@@ -10,11 +10,13 @@
 
 #import <Parse/Parse.h>
 
+@import CoreLocation;
 @import MapKit;
 
-@interface MOJOMapViewController () <MKMapViewDelegate, UIToolbarDelegate>
+@interface MOJOMapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) PFQuery *poiQuery;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
 @implementation MOJOMapViewController
@@ -27,6 +29,8 @@
     }
     
     _poiQuery = [PFQuery queryWithClassName:@"POI"];
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
     
     return self;
 }
@@ -39,12 +43,20 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self.poiQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (PFObject *poi in objects) {
             MKPointAnnotation *annotation = [self annotationForPOI:poi];
             [self.mapView addAnnotation:annotation];
         }
     }];
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.locationManager stopUpdatingLocation];
 }
 
 - (IBAction)addPinWithGesture:(UIGestureRecognizer *)recognizer
@@ -94,6 +106,18 @@
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
     return annotation;
+}
+
+#pragma mark - User Location
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        CLLocation *currentLocation = [locations lastObject];
+        [self.mapView setCenterCoordinate:currentLocation.coordinate];
+        [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 2000, 2000) animated:NO];
+    });
 }
 
 @end
