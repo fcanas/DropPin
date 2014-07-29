@@ -24,6 +24,8 @@
     
     self.window.rootViewController = nc;
     
+    [self setupParse];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -53,6 +55,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Configuration
+
+- (void)setupParse
+{
+    NSDictionary *keys = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"]];
+    
+    [Parse setApplicationId:keys[@"ParseApplicationID"]
+                  clientKey:keys[@"ParseClientKey"]];
 }
 
 @end
