@@ -18,6 +18,11 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0CJ-o5-SfE">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="P6D-u3-POj"/>
+                        <outletCollection property="gestureRecognizers" destination="qHU-t6-hRO" appends="YES" id="XLt-hq-hMF"/>
+                    </connections>
                 </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -30,5 +35,10 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="qHU-t6-hRO">
+            <connections>
+                <action selector="addPinWithGesture:" destination="-1" id="kNE-Ei-MN9"/>
+            </connections>
+        </pongPressGestureRecognizer>
     </objects>
 </document>

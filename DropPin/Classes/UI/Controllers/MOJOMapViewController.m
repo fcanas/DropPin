@@ -16,28 +16,39 @@
 
 @implementation MOJOMapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.navigationItem setRightBarButtonItem:[[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView]];
-    
-    [self.navigationItem setRightBarButtonItem:self.trackingButton];
-    
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)addPinWithGesture:(UIGestureRecognizer *)recognizer
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (recognizer.state != UIGestureRecognizerStateBegan) {
+        return;
+    }
+    
+    CGPoint touchLocation = [recognizer locationInView:self.mapView];
+    
+    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:touchLocation
+                                              toCoordinateFromView:self.mapView];
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate = coordinate;
+    
+    [self.mapView addAnnotation:annotation];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                               reuseIdentifier:@"pinViewIdentifier"];
+    pin.animatesDrop = YES;
+    return pin;
 }
 
 @end
