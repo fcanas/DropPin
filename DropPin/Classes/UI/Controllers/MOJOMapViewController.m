@@ -70,13 +70,12 @@
     CLLocationCoordinate2D coordinate = [self.mapView convertPoint:touchLocation
                                               toCoordinateFromView:self.mapView];
     
-    [self poiWithCoordinate:coordinate];
-    
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    annotation.coordinate = coordinate;
+    MKPointAnnotation *annotation = [self annotationForPOI:[self poiWithCoordinate:coordinate]];
     
     [self.mapView addAnnotation:annotation];
 }
+
+#pragma mark - MapView Delegate Methods
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -86,6 +85,8 @@
     
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                                reuseIdentifier:@"pinViewIdentifier"];
+    [pin setCanShowCallout:YES];
+    
     pin.animatesDrop = YES;
     return pin;
 }
@@ -110,14 +111,30 @@
 
 #pragma mark - User Location
 
+- (void)updateMapAnnotationDistancesFromLocation:(CLLocation *)currentLocation
+{
+    MKDistanceFormatter *formatter = [[MKDistanceFormatter alloc] init];
+    
+    [[self.mapView annotations] enumerateObjectsOfKind:[MKPointAnnotation class]
+                                            usingBlock:^(MKPointAnnotation *annotation, NSUInteger idx, BOOL *stop) {
+                                                CLLocation *annotationLocation = [[CLLocation alloc] initWithLatitude:annotation.coordinate.latitude
+                                                                                                            longitude:annotation.coordinate.longitude];
+                                                CLLocationDistance distance = [currentLocation distanceFromLocation:annotationLocation];
+                                                annotation.title = [formatter stringFromDistance:distance];
+                                            }];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    CLLocation *currentLocation = [locations lastObject];
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        CLLocation *currentLocation = [locations lastObject];
         [self.mapView setCenterCoordinate:currentLocation.coordinate];
         [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 2000, 2000) animated:NO];
     });
+    
+    [self updateMapAnnotationDistancesFromLocation:currentLocation];
 }
+
 
 @end
