@@ -12,13 +12,16 @@
 		E7541D281987DECA0051FFB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D271987DECA0051FFB9 /* UIKit.framework */; };
 		E7541D2E1987DECA0051FFB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7541D2C1987DECA0051FFB9 /* InfoPlist.strings */; };
 		E7541D301987DECA0051FFB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D2F1987DECA0051FFB9 /* main.m */; };
-		E7541D341987DECA0051FFB9 /* MOJOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D331987DECA0051FFB9 /* MOJOAppDelegate.m */; };
 		E7541D361987DECA0051FFB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7541D351987DECA0051FFB9 /* Images.xcassets */; };
 		E7541D3D1987DECA0051FFB9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D3C1987DECA0051FFB9 /* XCTest.framework */; };
 		E7541D3E1987DECA0051FFB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D231987DECA0051FFB9 /* Foundation.framework */; };
 		E7541D3F1987DECA0051FFB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D271987DECA0051FFB9 /* UIKit.framework */; };
 		E7541D471987DECA0051FFB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7541D451987DECA0051FFB9 /* InfoPlist.strings */; };
 		E7541D491987DECA0051FFB9 /* DropPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D481987DECA0051FFB9 /* DropPinTests.m */; };
+		E7541D5D1987E0860051FFB9 /* MOJOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D591987E0860051FFB9 /* MOJOAppDelegate.m */; };
+		E7541D641987E16C0051FFB9 /* MOJOMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D621987E16C0051FFB9 /* MOJOMapViewController.m */; };
+		E7541D651987E16C0051FFB9 /* MOJOMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7541D631987E16C0051FFB9 /* MOJOMapViewController.xib */; };
+		E7541D691987E2C60051FFB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D681987E2C60051FFB9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +43,18 @@
 		E7541D2D1987DECA0051FFB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7541D2F1987DECA0051FFB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7541D311987DECA0051FFB9 /* DropPin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DropPin-Prefix.pch"; sourceTree = "<group>"; };
-		E7541D321987DECA0051FFB9 /* MOJOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOJOAppDelegate.h; sourceTree = "<group>"; };
-		E7541D331987DECA0051FFB9 /* MOJOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOJOAppDelegate.m; sourceTree = "<group>"; };
 		E7541D351987DECA0051FFB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E7541D3B1987DECA0051FFB9 /* DropPinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropPinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7541D3C1987DECA0051FFB9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E7541D441987DECA0051FFB9 /* DropPinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DropPinTests-Info.plist"; sourceTree = "<group>"; };
 		E7541D461987DECA0051FFB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7541D481987DECA0051FFB9 /* DropPinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropPinTests.m; sourceTree = "<group>"; };
+		E7541D581987E0860051FFB9 /* MOJOAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOJOAppDelegate.h; sourceTree = "<group>"; };
+		E7541D591987E0860051FFB9 /* MOJOAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOJOAppDelegate.m; sourceTree = "<group>"; };
+		E7541D611987E16C0051FFB9 /* MOJOMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOJOMapViewController.h; sourceTree = "<group>"; };
+		E7541D621987E16C0051FFB9 /* MOJOMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOJOMapViewController.m; sourceTree = "<group>"; };
+		E7541D631987E16C0051FFB9 /* MOJOMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOJOMapViewController.xib; sourceTree = "<group>"; };
+		E7541D681987E2C60051FFB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7541D691987E2C60051FFB9 /* MapKit.framework in Frameworks */,
 				E7541D261987DECA0051FFB9 /* CoreGraphics.framework in Frameworks */,
 				E7541D281987DECA0051FFB9 /* UIKit.framework in Frameworks */,
 				E7541D241987DECA0051FFB9 /* Foundation.framework in Frameworks */,
@@ -77,6 +85,7 @@
 		E7541D171987DECA0051FFB9 = {
 			isa = PBXGroup;
 			children = (
+				E7541D561987E0860051FFB9 /* Classes */,
 				E7541D291987DECA0051FFB9 /* DropPin */,
 				E7541D421987DECA0051FFB9 /* DropPinTests */,
 				E7541D221987DECA0051FFB9 /* Frameworks */,
@@ -96,6 +105,7 @@
 		E7541D221987DECA0051FFB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7541D681987E2C60051FFB9 /* MapKit.framework */,
 				E7541D231987DECA0051FFB9 /* Foundation.framework */,
 				E7541D251987DECA0051FFB9 /* CoreGraphics.framework */,
 				E7541D271987DECA0051FFB9 /* UIKit.framework */,
@@ -107,8 +117,6 @@
 		E7541D291987DECA0051FFB9 /* DropPin */ = {
 			isa = PBXGroup;
 			children = (
-				E7541D321987DECA0051FFB9 /* MOJOAppDelegate.h */,
-				E7541D331987DECA0051FFB9 /* MOJOAppDelegate.m */,
 				E7541D351987DECA0051FFB9 /* Images.xcassets */,
 				E7541D2A1987DECA0051FFB9 /* Supporting Files */,
 			);
@@ -142,6 +150,51 @@
 				E7541D451987DECA0051FFB9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7541D561987E0860051FFB9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E7541D571987E0860051FFB9 /* Models */,
+				E7541D581987E0860051FFB9 /* MOJOAppDelegate.h */,
+				E7541D591987E0860051FFB9 /* MOJOAppDelegate.m */,
+				E7541D5A1987E0860051FFB9 /* UI */,
+			);
+			name = Classes;
+			path = DropPin/Classes;
+			sourceTree = "<group>";
+		};
+		E7541D571987E0860051FFB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E7541D5A1987E0860051FFB9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E7541D5B1987E0860051FFB9 /* Controllers */,
+				E7541D5C1987E0860051FFB9 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E7541D5B1987E0860051FFB9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E7541D611987E16C0051FFB9 /* MOJOMapViewController.h */,
+				E7541D621987E16C0051FFB9 /* MOJOMapViewController.m */,
+				E7541D631987E16C0051FFB9 /* MOJOMapViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E7541D5C1987E0860051FFB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +245,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MojoTech;
 				TargetAttributes = {
+					E7541D1F1987DECA0051FFB9 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					E7541D3A1987DECA0051FFB9 = {
 						TestTargetID = E7541D1F1987DECA0051FFB9;
 					};
@@ -221,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7541D2E1987DECA0051FFB9 /* InfoPlist.strings in Resources */,
+				E7541D651987E16C0051FFB9 /* MOJOMapViewController.xib in Resources */,
 				E7541D361987DECA0051FFB9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7541D301987DECA0051FFB9 /* main.m in Sources */,
-				E7541D341987DECA0051FFB9 /* MOJOAppDelegate.m in Sources */,
+				E7541D641987E16C0051FFB9 /* MOJOMapViewController.m in Sources */,
+				E7541D5D1987E0860051FFB9 /* MOJOAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +423,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropPin/DropPin-Prefix.pch";
 				INFOPLIST_FILE = "DropPin/DropPin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -374,7 +438,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropPin/DropPin-Prefix.pch";
 				INFOPLIST_FILE = "DropPin/DropPin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

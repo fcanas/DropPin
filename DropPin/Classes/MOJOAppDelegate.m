@@ -7,14 +7,21 @@
 //
 
 #import "MOJOAppDelegate.h"
+#import "MOJOMapViewController.h"
 
 @implementation MOJOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    MOJOMapViewController *mapViewController = [[MOJOMapViewController alloc] initWithNibName:@"MOJOMapViewController"
+                                                                                       bundle:nil];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+    
+    self.window.rootViewController = nc;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
