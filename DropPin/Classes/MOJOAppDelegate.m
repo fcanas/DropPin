@@ -9,6 +9,8 @@
 #import "MOJOAppDelegate.h"
 #import "MOJOMapViewController.h"
 
+#import <Parse/Parse.h>
+
 @implementation MOJOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
