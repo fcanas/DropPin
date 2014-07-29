@@ -1,4 +1,19 @@
 PODS:
+  - BlocksKit (2.2.3):
+    - BlocksKit/All
+  - BlocksKit/All (2.2.3):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.3)
+  - BlocksKit/DynamicDelegate (2.2.3)
+  - BlocksKit/MessageUI (2.2.3):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.3):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
   - Bolts (1.1.0)
   - Facebook-iOS-SDK (3.16.2):
     - Bolts
@@ -7,6 +22,7 @@ PODS:
   - SafeCast (0.0.1)
 
 DEPENDENCIES:
+  - BlocksKit
   - Parse (~> 1.2)
   - SafeCast (from `https://github.com/fcanas/SafeCast.git`)
 
@@ -15,6 +31,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/fcanas/SafeCast.git
 
 SPEC CHECKSUMS:
+  BlocksKit: 07c8a80f04275efac6a5f8b973782489c083a182
   Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
   Facebook-iOS-SDK: 34eef640c2cc4c8618ba0f574ad2b290e07f1b4e
   Parse: 28c0dc54f30201a369d29a2f76c09fa43b2add16

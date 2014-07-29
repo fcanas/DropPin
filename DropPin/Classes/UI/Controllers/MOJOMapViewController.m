@@ -7,15 +7,13 @@
 //
 
 #import "MOJOMapViewController.h"
-
-#import <Parse/Parse.h>
+#import "MOJOPOI.h"
 
 @import CoreLocation;
 @import MapKit;
 
 @interface MOJOMapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-@property (nonatomic, strong) PFQuery *poiQuery;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
@@ -28,7 +26,6 @@
         return nil;
     }
     
-    _poiQuery = [PFQuery queryWithClassName:@"POI"];
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
     
@@ -44,11 +41,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.poiQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (PFObject *poi in objects) {
-            MKPointAnnotation *annotation = [self annotationForPOI:poi];
-            [self.mapView addAnnotation:annotation];
-        }
+    [MOJOPOI loadPOIsWithCompletion:^(NSArray *objects, NSError *error) {
+        [self.mapView addAnnotations:objects];
     }];
     [self.locationManager startUpdatingLocation];
 }
@@ -70,7 +64,7 @@
     CLLocationCoordinate2D coordinate = [self.mapView convertPoint:touchLocation
                                               toCoordinateFromView:self.mapView];
     
-    MKPointAnnotation *annotation = [self annotationForPOI:[self poiWithCoordinate:coordinate]];
+    MOJOPOI *annotation = [MOJOPOI poiWithCoordinate:coordinate];
     
     [self.mapView addAnnotation:annotation];
 }
@@ -83,30 +77,17 @@
         return nil;
     }
     
-    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                                               reuseIdentifier:@"pinViewIdentifier"];
+    MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinViewIdentifier"];
+    
+    if (pin == nil) {
+        pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                              reuseIdentifier:@"pinViewIdentifier"];
+    }
+    
     [pin setCanShowCallout:YES];
     
     pin.animatesDrop = YES;
     return pin;
-}
-
-#pragma mark - POI managment
-
-- (PFObject *)poiWithCoordinate:(CLLocationCoordinate2D)coordinate
-{
-    PFObject *poi = [[PFObject alloc] initWithClassName:@"POI"];
-    poi[@"coordinate"] = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-    [poi saveInBackground];
-    return poi;
-}
-
-- (MKPointAnnotation *)annotationForPOI:(PFObject *)poi
-{
-    PFGeoPoint *geoPoint = poi[@"coordinate"];
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    annotation.coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
-    return annotation;
 }
 
 #pragma mark - User Location
@@ -115,8 +96,8 @@
 {
     MKDistanceFormatter *formatter = [[MKDistanceFormatter alloc] init];
     
-    [[self.mapView annotations] enumerateObjectsOfKind:[MKPointAnnotation class]
-                                            usingBlock:^(MKPointAnnotation *annotation, NSUInteger idx, BOOL *stop) {
+    [[self.mapView annotations] enumerateObjectsOfKind:[MOJOPOI class]
+                                            usingBlock:^(MOJOPOI *annotation, NSUInteger idx, BOOL *stop) {
                                                 CLLocation *annotationLocation = [[CLLocation alloc] initWithLatitude:annotation.coordinate.latitude
                                                                                                             longitude:annotation.coordinate.longitude];
                                                 CLLocationDistance distance = [currentLocation distanceFromLocation:annotationLocation];
@@ -135,6 +116,5 @@
     
     [self updateMapAnnotationDistancesFromLocation:currentLocation];
 }
-
 
 @end

@@ -24,6 +24,7 @@
 		E7541D651987E16C0051FFB9 /* MOJOMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7541D631987E16C0051FFB9 /* MOJOMapViewController.xib */; };
 		E7541D691987E2C60051FFB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D681987E2C60051FFB9 /* MapKit.framework */; };
 		E7541D6B198809560051FFB9 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7541D6A198809560051FFB9 /* Keys.plist */; };
+		E7541D6E19883A460051FFB9 /* MOJOPOI.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D6D19883A460051FFB9 /* MOJOPOI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		E7541D631987E16C0051FFB9 /* MOJOMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOJOMapViewController.xib; sourceTree = "<group>"; };
 		E7541D681987E2C60051FFB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E7541D6A198809560051FFB9 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		E7541D6C19883A460051FFB9 /* MOJOPOI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOJOPOI.h; sourceTree = "<group>"; };
+		E7541D6D19883A460051FFB9 /* MOJOPOI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOJOPOI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 		E7541D571987E0860051FFB9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E7541D6C19883A460051FFB9 /* MOJOPOI.h */,
+				E7541D6D19883A460051FFB9 /* MOJOPOI.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7541D301987DECA0051FFB9 /* main.m in Sources */,
+				E7541D6E19883A460051FFB9 /* MOJOPOI.m in Sources */,
 				E7541D641987E16C0051FFB9 /* MOJOMapViewController.m in Sources */,
 				E7541D5D1987E0860051FFB9 /* MOJOAppDelegate.m in Sources */,
 			);
