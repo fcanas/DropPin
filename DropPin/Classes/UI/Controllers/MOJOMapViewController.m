@@ -105,9 +105,9 @@
             UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
             [editButton setTitle:@"Edit" forState:UIControlStateNormal];
             [editButton sizeToFit];
-            pin.leftCalloutAccessoryView = editButton;
+            pin.rightCalloutAccessoryView = editButton;
         } else {
-            pin.leftCalloutAccessoryView = nil;
+            pin.rightCalloutAccessoryView = nil;
         }
     }];
     

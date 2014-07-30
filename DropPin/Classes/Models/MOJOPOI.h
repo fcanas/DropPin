@@ -14,6 +14,7 @@
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *placeDescription;
 
 // Display properties for MapKit
 @property (nonatomic, readonly, copy) NSString *title;

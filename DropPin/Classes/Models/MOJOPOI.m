@@ -51,11 +51,25 @@
     [parsePoi saveInBackground];
     
     MOJOPOI *mojoPoi = [[MOJOPOI alloc] initWithParseObject:parsePoi];
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    [[CLGeocoder new] reverseGeocodeLocation:location
+                           completionHandler:^(NSArray *placemarks, NSError *error) {
+                               CLPlacemark *placemark = [placemarks firstObject];
+                               mojoPoi.name = [placemark name];
+                               mojoPoi.placeDescription = [NSString stringWithFormat:@"%@ %@", placemark.thoroughfare?:@"", placemark.locality?:@""];
+                               [mojoPoi.parseObject saveInBackground];
+                           }];
     return mojoPoi;
 }
 
 - (NSString *)title {
     return self.name?:@"Untitled";
+}
+
+- (NSString *)subtitle
+{
+    return self.placeDescription;
 }
 
 - (BOOL)isEditable
@@ -80,6 +94,16 @@
 - (void)setName:(NSString *)name
 {
     self.parseObject[@"name"] = name;
+}
+
+- (void)setPlaceDescription:(NSString *)placeDescription
+{
+    self.parseObject[@"placeDescription"] = placeDescription;
+}
+
+- (NSString *)placeDescription
+{
+    return self.parseObject[@"placeDescription"];
 }
 
 - (BOOL)save
