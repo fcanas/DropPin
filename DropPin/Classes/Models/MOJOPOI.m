@@ -51,8 +51,11 @@
     [parsePoi saveInBackground];
     
     MOJOPOI *mojoPoi = [[MOJOPOI alloc] initWithParseObject:parsePoi];
-    mojoPoi.coordinate = coordinate;
     return mojoPoi;
+}
+
+- (NSString *)subtitle {
+    return self.name;
 }
 
 #pragma mark - Parse Properties
@@ -61,6 +64,21 @@
 {
     PFGeoPoint *geoPoint = self.parseObject[@"coordinate"];
     return CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+}
+
+- (NSString *)name
+{
+    return self.parseObject[@"name"];
+}
+
+- (void)setName:(NSString *)name
+{
+    self.parseObject[@"name"] = name;
+}
+
+- (BOOL)save
+{
+    return [self.parseObject save:nil];
 }
 
 @end

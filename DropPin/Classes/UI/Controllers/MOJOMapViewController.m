@@ -8,6 +8,7 @@
 
 #import "MOJOMapViewController.h"
 #import "MOJOPOI.h"
+#import "MOJOEditPOIViewController.h"
 
 @import CoreLocation;
 @import MapKit;
@@ -53,6 +54,12 @@
     [self.locationManager stopUpdatingLocation];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+}
+
 - (IBAction)addPinWithGesture:(UIGestureRecognizer *)recognizer
 {
     if (recognizer.state != UIGestureRecognizerStateBegan) {
@@ -64,12 +71,21 @@
     CLLocationCoordinate2D coordinate = [self.mapView convertPoint:touchLocation
                                               toCoordinateFromView:self.mapView];
     
-    MOJOPOI *annotation = [MOJOPOI poiWithCoordinate:coordinate];
-    
-    [self.mapView addAnnotation:annotation];
+    [self.mapView addAnnotation:[MOJOPOI poiWithCoordinate:coordinate]];
 }
 
 #pragma mark - MapView Delegate Methods
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    MOJOEditPOIViewController *editController = [[MOJOEditPOIViewController alloc] initWithPOI:view.annotation];
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:editController];
+    
+    [self presentViewController:nc
+                       animated:YES
+                     completion:nil];
+}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -83,6 +99,11 @@
         pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                               reuseIdentifier:@"pinViewIdentifier"];
     }
+    
+    UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [editButton setTitle:@"Edit" forState:UIControlStateNormal];
+    [editButton sizeToFit];
+    pin.leftCalloutAccessoryView = editButton;
     
     [pin setCanShowCallout:YES];
     
