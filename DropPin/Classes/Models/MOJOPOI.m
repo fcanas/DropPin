@@ -58,6 +58,12 @@
     return self.name;
 }
 
+- (BOOL)isEditable
+{
+    // TODO : Does not consider globally writable objects, or group access.
+    return [self.parseObject.ACL getWriteAccessForUser:[PFUser currentUser]];
+}
+
 #pragma mark - Parse Properties
 
 - (CLLocationCoordinate2D)coordinate

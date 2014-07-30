@@ -100,10 +100,16 @@
                                               reuseIdentifier:@"pinViewIdentifier"];
     }
     
-    UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [editButton setTitle:@"Edit" forState:UIControlStateNormal];
-    [editButton sizeToFit];
-    pin.leftCalloutAccessoryView = editButton;
+    [MOJOPOI cast:annotation intoBlock:^(MOJOPOI *poi) {
+        if ([poi isEditable]) {
+            UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
+            [editButton setTitle:@"Edit" forState:UIControlStateNormal];
+            [editButton sizeToFit];
+            pin.leftCalloutAccessoryView = editButton;
+        } else {
+            pin.leftCalloutAccessoryView = nil;
+        }
+    }];
     
     [pin setCanShowCallout:YES];
     

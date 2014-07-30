@@ -29,4 +29,6 @@
 // Synchronously save the POI. Returns success.
 - (BOOL)save;
 
+- (BOOL)isEditable;
+
 @end

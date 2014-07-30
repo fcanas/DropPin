@@ -55,7 +55,8 @@
     [[self poi] setName:theName];
     
     if ([self.poi save]) {
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        [self.presentingViewController dismissViewControllerAnimated:YES
+                                                          completion:nil];
     } else {
         [self showAlertDialog];
     }
@@ -63,7 +64,11 @@
 
 - (void)showAlertDialog {
     
-    [[[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"Save Failed"
+                                message:@"Unable to save the POI."
+                               delegate:nil
+                      cancelButtonTitle:@"Ok"
+                      otherButtonTitles:nil] show];
 }
 
 @end
