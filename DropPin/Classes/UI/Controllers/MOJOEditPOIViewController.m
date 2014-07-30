@@ -11,6 +11,7 @@
 
 @interface MOJOEditPOIViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) MOJOPOI *poi;
 @end
 
@@ -36,6 +37,7 @@
 {
     [super viewDidLoad];
     self.nameField.text = self.poi.name;
+    self.descriptionField.text = self.poi.placeDescription;
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,8 +53,8 @@
 
 - (void)save:(id)sender
 {
-    NSString *theName = [self.nameField text];
-    [[self poi] setName:theName];
+    self.poi.name = self.nameField.text;
+    self.poi.placeDescription = self.descriptionField.text;
     
     if ([self.poi save]) {
         [self.presentingViewController dismissViewControllerAnimated:YES

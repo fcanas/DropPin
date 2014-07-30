@@ -63,7 +63,8 @@
     return mojoPoi;
 }
 
-- (NSString *)title {
+- (NSString *)title
+{
     return self.name?:@"Untitled";
 }
 
