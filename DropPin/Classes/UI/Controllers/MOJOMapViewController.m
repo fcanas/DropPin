@@ -128,7 +128,7 @@
                                                 CLLocation *annotationLocation = [[CLLocation alloc] initWithLatitude:annotation.coordinate.latitude
                                                                                                             longitude:annotation.coordinate.longitude];
                                                 CLLocationDistance distance = [currentLocation distanceFromLocation:annotationLocation];
-                                                annotation.title = [formatter stringFromDistance:distance];
+                                                annotation.subtitle = [formatter stringFromDistance:distance];
                                             }];
 }
 

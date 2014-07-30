@@ -54,8 +54,8 @@
     return mojoPoi;
 }
 
-- (NSString *)subtitle {
-    return self.name;
+- (NSString *)title {
+    return self.name?:@"Untitled";
 }
 
 - (BOOL)isEditable

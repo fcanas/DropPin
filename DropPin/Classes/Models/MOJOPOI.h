@@ -16,8 +16,8 @@
 @property (nonatomic, copy) NSString *name;
 
 // Display properties for MapKit
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
 
 /**
  The callback will be called with all MOJOPOIs in an array.
