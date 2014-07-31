@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:@"MOJOEditPOIViewController" bundle:nil];
     if (self) {
-        self.navigationItem.title = @"Edit POI";
+        self.navigationItem.title = @"Edit";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                               target:self
                                                                                               action:@selector(cancel:)];

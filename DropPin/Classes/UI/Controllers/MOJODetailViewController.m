@@ -44,7 +44,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+    self.navigationItem.title = self.poi.name;
     self.nameLabel.text = self.poi.name;
     self.descriptionLabel.text = self.poi.placeDescription;
 }
