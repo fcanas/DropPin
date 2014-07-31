@@ -71,6 +71,8 @@
     PFACL *defaultACL = [PFACL ACL];
     [defaultACL setPublicReadAccess:YES];
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+    
+    [[PFUser currentUser] saveInBackground];
 }
 
 @end
