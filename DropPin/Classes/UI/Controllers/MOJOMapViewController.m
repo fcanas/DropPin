@@ -37,14 +37,15 @@
 {
     [super viewDidLoad];
     [self.navigationItem setRightBarButtonItem:[[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView]];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                            target:self
+                                                                                            action:@selector(refreshPOIs)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MOJOPOI loadPOIsWithCompletion:^(NSArray *objects, NSError *error) {
-        [self.mapView addAnnotations:objects];
-    }];
+    [self refreshPOIs];
     [self.locationManager startUpdatingLocation];
 }
 
@@ -57,8 +58,9 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self.mapView removeAnnotations:self.mapView.annotations];
 }
+
+#pragma mark - POI Methods
 
 - (IBAction)addPinWithGesture:(UIGestureRecognizer *)recognizer
 {
@@ -72,6 +74,14 @@
                                               toCoordinateFromView:self.mapView];
     
     [self.mapView addAnnotation:[MOJOPOI poiWithCoordinate:coordinate]];
+}
+
+- (void)refreshPOIs
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [MOJOPOI loadPOIsWithCompletion:^(NSArray *objects, NSError *error) {
+        [self.mapView addAnnotations:objects];
+    }];
 }
 
 #pragma mark - MapView Delegate Methods
