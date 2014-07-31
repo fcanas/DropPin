@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CAE6593054D1471FB8AE9683 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3B96A80DA43BC8618C574 /* libPods.a */; };
+		E72D60D3198A84A900294958 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72D60D2198A84A900294958 /* Keys.plist */; };
 		E7541D241987DECA0051FFB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D231987DECA0051FFB9 /* Foundation.framework */; };
 		E7541D261987DECA0051FFB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D251987DECA0051FFB9 /* CoreGraphics.framework */; };
 		E7541D281987DECA0051FFB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D271987DECA0051FFB9 /* UIKit.framework */; };
@@ -23,7 +24,6 @@
 		E7541D641987E16C0051FFB9 /* MOJOMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D621987E16C0051FFB9 /* MOJOMapViewController.m */; };
 		E7541D651987E16C0051FFB9 /* MOJOMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7541D631987E16C0051FFB9 /* MOJOMapViewController.xib */; };
 		E7541D691987E2C60051FFB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D681987E2C60051FFB9 /* MapKit.framework */; };
-		E7541D6B198809560051FFB9 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7541D6A198809560051FFB9 /* Keys.plist */; };
 		E7541D6E19883A460051FFB9 /* MOJOPOI.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D6D19883A460051FFB9 /* MOJOPOI.m */; };
 		E7541D721989455E0051FFB9 /* MOJOEditPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7541D701989455E0051FFB9 /* MOJOEditPOIViewController.m */; };
 		E7541D731989455E0051FFB9 /* MOJOEditPOIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7541D711989455E0051FFB9 /* MOJOEditPOIViewController.xib */; };
@@ -42,6 +42,7 @@
 /* Begin PBXFileReference section */
 		0CF3B96A80DA43BC8618C574 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB0D7EF9F8345F182B86C31 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E72D60D2198A84A900294958 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		E7541D201987DECA0051FFB9 /* DropPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7541D231987DECA0051FFB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7541D251987DECA0051FFB9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,7 +63,6 @@
 		E7541D621987E16C0051FFB9 /* MOJOMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOJOMapViewController.m; sourceTree = "<group>"; };
 		E7541D631987E16C0051FFB9 /* MOJOMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOJOMapViewController.xib; sourceTree = "<group>"; };
 		E7541D681987E2C60051FFB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E7541D6A198809560051FFB9 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		E7541D6C19883A460051FFB9 /* MOJOPOI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOJOPOI.h; sourceTree = "<group>"; };
 		E7541D6D19883A460051FFB9 /* MOJOPOI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOJOPOI.m; sourceTree = "<group>"; };
 		E7541D6F1989455E0051FFB9 /* MOJOEditPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOJOEditPOIViewController.h; sourceTree = "<group>"; };
@@ -142,11 +142,11 @@
 		E7541D2A1987DECA0051FFB9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E72D60D2198A84A900294958 /* Keys.plist */,
 				E7541D2B1987DECA0051FFB9 /* DropPin-Info.plist */,
 				E7541D2C1987DECA0051FFB9 /* InfoPlist.strings */,
 				E7541D2F1987DECA0051FFB9 /* main.m */,
 				E7541D311987DECA0051FFB9 /* DropPin-Prefix.pch */,
-				E7541D6A198809560051FFB9 /* Keys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7541D6B198809560051FFB9 /* Keys.plist in Resources */,
+				E72D60D3198A84A900294958 /* Keys.plist in Resources */,
 				E7541D2E1987DECA0051FFB9 /* InfoPlist.strings in Resources */,
 				E7541D651987E16C0051FFB9 /* MOJOMapViewController.xib in Resources */,
 				E7541D731989455E0051FFB9 /* MOJOEditPOIViewController.xib in Resources */,
