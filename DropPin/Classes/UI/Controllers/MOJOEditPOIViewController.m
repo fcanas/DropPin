@@ -40,12 +40,6 @@
     self.descriptionField.text = self.poi.placeDescription;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)cancel:(id)sender
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

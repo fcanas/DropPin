@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EE3DD84198A975B002F6822 /* MOJODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE3DD82198A975B002F6822 /* MOJODetailViewController.m */; };
+		0EE3DD85198A975B002F6822 /* MOJODetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE3DD83198A975B002F6822 /* MOJODetailViewController.xib */; };
 		CAE6593054D1471FB8AE9683 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3B96A80DA43BC8618C574 /* libPods.a */; };
 		E72D60D3198A84A900294958 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72D60D2198A84A900294958 /* Keys.plist */; };
 		E7541D241987DECA0051FFB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7541D231987DECA0051FFB9 /* Foundation.framework */; };
@@ -41,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		0CF3B96A80DA43BC8618C574 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EE3DD81198A975B002F6822 /* MOJODetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOJODetailViewController.h; sourceTree = "<group>"; };
+		0EE3DD82198A975B002F6822 /* MOJODetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOJODetailViewController.m; sourceTree = "<group>"; };
+		0EE3DD83198A975B002F6822 /* MOJODetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOJODetailViewController.xib; sourceTree = "<group>"; };
 		DCB0D7EF9F8345F182B86C31 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E72D60D2198A84A900294958 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		E7541D201987DECA0051FFB9 /* DropPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +213,9 @@
 				E7541D6F1989455E0051FFB9 /* MOJOEditPOIViewController.h */,
 				E7541D701989455E0051FFB9 /* MOJOEditPOIViewController.m */,
 				E7541D711989455E0051FFB9 /* MOJOEditPOIViewController.xib */,
+				0EE3DD81198A975B002F6822 /* MOJODetailViewController.h */,
+				0EE3DD82198A975B002F6822 /* MOJODetailViewController.m */,
+				0EE3DD83198A975B002F6822 /* MOJODetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE3DD85198A975B002F6822 /* MOJODetailViewController.xib in Resources */,
 				E72D60D3198A84A900294958 /* Keys.plist in Resources */,
 				E7541D2E1987DECA0051FFB9 /* InfoPlist.strings in Resources */,
 				E7541D651987E16C0051FFB9 /* MOJOMapViewController.xib in Resources */,
@@ -362,6 +371,7 @@
 			files = (
 				E7541D301987DECA0051FFB9 /* main.m in Sources */,
 				E7541D6E19883A460051FFB9 /* MOJOPOI.m in Sources */,
+				0EE3DD84198A975B002F6822 /* MOJODetailViewController.m in Sources */,
 				E7541D641987E16C0051FFB9 /* MOJOMapViewController.m in Sources */,
 				E7541D721989455E0051FFB9 /* MOJOEditPOIViewController.m in Sources */,
 				E7541D5D1987E0860051FFB9 /* MOJOAppDelegate.m in Sources */,

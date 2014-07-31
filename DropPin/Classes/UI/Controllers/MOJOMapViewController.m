@@ -8,7 +8,7 @@
 
 #import "MOJOMapViewController.h"
 #import "MOJOPOI.h"
-#import "MOJOEditPOIViewController.h"
+#import "MOJODetailViewController.h"
 
 @import CoreLocation;
 @import MapKit;
@@ -78,13 +78,10 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    MOJOEditPOIViewController *editController = [[MOJOEditPOIViewController alloc] initWithPOI:view.annotation];
     
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:editController];
+    MOJODetailViewController *detailViewController = [[MOJODetailViewController alloc] initWithPOI:view.annotation];
     
-    [self presentViewController:nc
-                       animated:YES
-                     completion:nil];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -100,16 +97,7 @@
                                               reuseIdentifier:@"pinViewIdentifier"];
     }
     
-    [MOJOPOI cast:annotation intoBlock:^(MOJOPOI *poi) {
-        if ([poi isEditable]) {
-            UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
-            [editButton setTitle:@"Edit" forState:UIControlStateNormal];
-            [editButton sizeToFit];
-            pin.rightCalloutAccessoryView = editButton;
-        } else {
-            pin.rightCalloutAccessoryView = nil;
-        }
-    }];
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
     [pin setCanShowCallout:YES];
     
