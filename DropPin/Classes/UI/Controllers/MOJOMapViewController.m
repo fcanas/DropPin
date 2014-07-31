@@ -90,7 +90,7 @@
         return nil;
     }
     
-    MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinViewIdentifier"];
+    MKPinAnnotationView *pin = [MKPinAnnotationView cast:[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinViewIdentifier"]];
     
     if (pin == nil) {
         pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
@@ -100,6 +100,10 @@
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
     [pin setCanShowCallout:YES];
+    
+    [MOJOPOI cast:annotation intoBlock:^(MOJOPOI *poi) {
+        pin.pinColor = poi.isEditable?MKPinAnnotationColorGreen:MKPinAnnotationColorRed;
+    }];
     
     pin.animatesDrop = YES;
     return pin;
