@@ -50,12 +50,14 @@
     self.poi.name = self.nameField.text;
     self.poi.placeDescription = self.descriptionField.text;
     
-    if ([self.poi save]) {
-        [self.presentingViewController dismissViewControllerAnimated:YES
-                                                          completion:nil];
-    } else {
-        [self showAlertDialog];
-    }
+    [self.poi saveWithBlock:^(BOOL success) {
+        if (success) {
+            [self.presentingViewController dismissViewControllerAnimated:YES
+                                                              completion:nil];
+        } else {
+            [self showAlertDialog];
+        }
+    }];
 }
 
 - (void)showAlertDialog {

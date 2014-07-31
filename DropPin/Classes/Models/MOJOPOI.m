@@ -107,9 +107,13 @@
     return self.parseObject[@"placeDescription"];
 }
 
-- (BOOL)save
+- (void)saveWithBlock:(void(^)(BOOL success))completionBlock
 {
-    return [self.parseObject save:nil];
+    [self.parseObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (completionBlock) {
+            completionBlock(succeeded);
+        }
+    }];
 }
 
 @end

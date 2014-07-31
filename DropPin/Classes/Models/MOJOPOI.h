@@ -27,8 +27,8 @@
 
 + (MOJOPOI *)poiWithCoordinate:(CLLocationCoordinate2D)coordinate;
 
-// Synchronously save the POI. Returns success.
-- (BOOL)save;
+// Asynchronously save the POI. Returns success.
+- (void)saveWithBlock:(void(^)(BOOL success))completionBlock;
 
 - (BOOL)isEditable;
 
