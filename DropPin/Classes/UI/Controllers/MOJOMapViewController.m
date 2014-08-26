@@ -42,7 +42,6 @@
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                             target:self
                                                                                             action:@selector(refreshPOIs)]];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -129,12 +128,12 @@
     MKDistanceFormatter *formatter = [[MKDistanceFormatter alloc] init];
     
     [[self.mapView annotations] safe_enumerateObjectsOfKind:[MOJOPOI class]
-                                            usingBlock:^(MOJOPOI *annotation, NSUInteger idx, BOOL *stop) {
-                                                CLLocation *annotationLocation = [[CLLocation alloc] initWithLatitude:annotation.coordinate.latitude
-                                                                                                            longitude:annotation.coordinate.longitude];
-                                                CLLocationDistance distance = [currentLocation distanceFromLocation:annotationLocation];
-                                                annotation.subtitle = [formatter stringFromDistance:distance];
-                                            }];
+                                                 usingBlock:^(MOJOPOI *annotation, NSUInteger idx, BOOL *stop) {
+                                                     CLLocation *annotationLocation = [[CLLocation alloc] initWithLatitude:annotation.coordinate.latitude
+                                                                                                                 longitude:annotation.coordinate.longitude];
+                                                     CLLocationDistance distance = [currentLocation distanceFromLocation:annotationLocation];
+                                                     annotation.subtitle = [formatter stringFromDistance:distance];
+                                                 }];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations

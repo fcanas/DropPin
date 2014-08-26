@@ -20,16 +20,19 @@
 - (instancetype)initWithPOI:(MOJOPOI *)poi
 {
     self = [super initWithNibName:@"MOJOEditPOIViewController" bundle:nil];
-    if (self) {
-        self.navigationItem.title = @"Edit";
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                              target:self
-                                                                                              action:@selector(cancel:)];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                                                               target:self
-                                                                                               action:@selector(save:)];
-        _poi = poi;
+    if (self == nil) {
+        return nil;
     }
+    
+    self.navigationItem.title = @"Edit";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                          target:self
+                                                                                          action:@selector(cancel:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                           target:self
+                                                                                           action:@selector(save:)];
+    _poi = poi;
+    
     return self;
 }
 

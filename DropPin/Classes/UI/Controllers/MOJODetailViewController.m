@@ -23,14 +23,15 @@
 - (instancetype)initWithPOI:(MOJOPOI *)poi
 {
     self = [super initWithNibName:@"MOJODetailViewController" bundle:nil];
-    if (self) {
-
-        if ([poi isEditable]) {
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editDescription:)];
-        }
-        
-        _poi = poi;
+    if (self == nil) {
+        return nil;
     }
+    
+    if ([poi isEditable]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editDescription:)];
+    }
+    _poi = poi;
+    
     return self;
 }
 
