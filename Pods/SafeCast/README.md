@@ -1,9 +1,6 @@
 # SafeCast
 
 [![CI Status](http://img.shields.io/travis/fcanas/SafeCast.svg?style=flat)](https://travis-ci.org/fcanas/SafeCast)
-[![Version](https://img.shields.io/cocoapods/v/SafeCast.svg?style=flat)](http://cocoadocs.org/docsets/SafeCast)
-[![License](https://img.shields.io/cocoapods/l/SafeCast.svg?style=flat)](http://cocoadocs.org/docsets/SafeCast)
-[![Platform](https://img.shields.io/cocoapods/p/SafeCast.svg?style=flat)](http://cocoadocs.org/docsets/SafeCast)
 
 * Cast objects in Objective-C, not in C
 * Enumerate objects in collections only if they're of a certain kind, or conform to a protocol
@@ -53,10 +50,10 @@ Well, first of all, it's _really_ small. The documentation in the headers is _mu
 
 ### Easy to integrate 
 
-SafeCast is available as a [CocoaPod](http://guides.cocoapods.org/using/getting-started.html).
+When it's done, I'll release SafeCast as a [CocoaPod](http://guides.cocoapods.org/using/getting-started.html). Until the podspec is published, you'll have to include a reference to this repository directly in your Podfile:
 
 ```
-pod 'SafeCase'
+pod 'SafeCase', git: 'https://github.com/fcanas/SafeCast.git'
 ```
 
 ### Be concice and direct with your intent
