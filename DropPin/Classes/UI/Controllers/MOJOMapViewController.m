@@ -103,7 +103,7 @@
         return nil;
     }
     
-    MKPinAnnotationView *pin = [MKPinAnnotationView cast:[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinViewIdentifier"]];
+    MKPinAnnotationView *pin = [MKPinAnnotationView safe_cast:[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinViewIdentifier"]];
     
     if (pin == nil) {
         pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
@@ -114,7 +114,7 @@
     
     [pin setCanShowCallout:YES];
     
-    [MOJOPOI cast:annotation intoBlock:^(MOJOPOI *poi) {
+    [MOJOPOI safe_cast:annotation intoBlock:^(MOJOPOI *poi) {
         pin.pinColor = poi.isEditable?MKPinAnnotationColorGreen:MKPinAnnotationColorRed;
     }];
     
@@ -128,7 +128,7 @@
 {
     MKDistanceFormatter *formatter = [[MKDistanceFormatter alloc] init];
     
-    [[self.mapView annotations] enumerateObjectsOfKind:[MOJOPOI class]
+    [[self.mapView annotations] safe_enumerateObjectsOfKind:[MOJOPOI class]
                                             usingBlock:^(MOJOPOI *annotation, NSUInteger idx, BOOL *stop) {
                                                 CLLocation *annotationLocation = [[CLLocation alloc] initWithLatitude:annotation.coordinate.latitude
                                                                                                             longitude:annotation.coordinate.longitude];

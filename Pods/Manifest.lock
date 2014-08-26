@@ -1,26 +1,26 @@
 PODS:
-  - BlocksKit (2.2.3):
+  - BlocksKit (2.2.5):
     - BlocksKit/All
-  - BlocksKit/All (2.2.3):
+  - BlocksKit/All (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
     - BlocksKit/MessageUI
     - BlocksKit/UIKit
-  - BlocksKit/Core (2.2.3)
-  - BlocksKit/DynamicDelegate (2.2.3)
-  - BlocksKit/MessageUI (2.2.3):
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - BlocksKit/UIKit (2.2.3):
+  - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - Bolts (1.1.0)
-  - Facebook-iOS-SDK (3.16.2):
+  - Bolts (1.1.2)
+  - Facebook-iOS-SDK (3.17.0):
     - Bolts
   - FlickrKit (1.0.3)
   - Parse (1.2.20):
     - Facebook-iOS-SDK (~> 3.11)
-  - SafeCast (0.0.1)
+  - SafeCast (1.0.0)
 
 DEPENDENCIES:
   - BlocksKit
@@ -33,11 +33,11 @@ EXTERNAL SOURCES:
     :git: https://github.com/fcanas/SafeCast.git
 
 SPEC CHECKSUMS:
-  BlocksKit: 07c8a80f04275efac6a5f8b973782489c083a182
-  Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
-  Facebook-iOS-SDK: 34eef640c2cc4c8618ba0f574ad2b290e07f1b4e
+  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  Bolts: 2635e8698a630774689441047f3465d78c48d485
+  Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
   FlickrKit: 884ea0173b3f8a1f56fd418f2ae635a03a852294
   Parse: 28c0dc54f30201a369d29a2f76c09fa43b2add16
-  SafeCast: c594a9b1ad7a63099e5a8f4508a720e855f35437
+  SafeCast: 7c850598e8a83c1c36ad7134657b38382221f649
 
 COCOAPODS: 0.33.1
