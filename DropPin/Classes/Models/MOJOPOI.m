@@ -8,7 +8,6 @@
 
 #import "MOJOPOI.h"
 
-#import <BlocksKit/BlocksKit.h>
 #import <Parse/Parse.h>
 
 @interface MOJOPOI ()
@@ -22,9 +21,15 @@
     PFQuery *poiQuery = [PFQuery queryWithClassName:@"POI"];
     
     [poiQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        NSArray *pois = [objects bk_map:^id(PFObject *obj) {
-            return [[MOJOPOI alloc] initWithParseObject:obj];
-        }];
+        
+        NSMutableArray *pois = [NSMutableArray arrayWithCapacity:objects.count];
+        
+        for (PFObject *obj in objects) {
+            MOJOPOI *poi = [[MOJOPOI alloc] initWithParseObject:obj];
+            if (poi) {
+                [pois addObject:poi];
+            }
+        }
         
         if (completion) {
             completion(pois, error);

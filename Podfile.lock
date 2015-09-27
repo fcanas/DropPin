@@ -1,31 +1,14 @@
 PODS:
-  - BlocksKit (2.2.5):
-    - BlocksKit/All (= 2.2.5)
-  - BlocksKit/All (2.2.5):
-    - BlocksKit/Core
-    - BlocksKit/DynamicDelegate
-    - BlocksKit/MessageUI
-    - BlocksKit/UIKit
-  - BlocksKit/Core (2.2.5)
-  - BlocksKit/DynamicDelegate (2.2.5)
-  - BlocksKit/MessageUI (2.2.5):
-    - BlocksKit/Core
-    - BlocksKit/DynamicDelegate
-  - BlocksKit/UIKit (2.2.5):
-    - BlocksKit/Core
-    - BlocksKit/DynamicDelegate
   - Bolts/Tasks (1.3.0)
   - Parse (1.8.5):
     - Bolts/Tasks (>= 1.2.2)
   - SafeCast (1.1.1)
 
 DEPENDENCIES:
-  - BlocksKit
-  - Parse (~> 1.2)
+  - Parse (~> 1.8.5)
   - SafeCast
 
 SPEC CHECKSUMS:
-  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
   SafeCast: 2793023bdf33abb2f157f4a70d68850302c8b285
