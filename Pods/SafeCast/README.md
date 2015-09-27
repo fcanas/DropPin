@@ -1,6 +1,9 @@
 # SafeCast
 
 [![CI Status](http://img.shields.io/travis/fcanas/SafeCast.svg?style=flat)](https://travis-ci.org/fcanas/SafeCast)
+[![Version](https://img.shields.io/cocoapods/v/SafeCast.svg?style=flat)](http://cocoadocs.org/docsets/SafeCast)
+[![License](https://img.shields.io/cocoapods/l/SafeCast.svg?style=flat)](http://cocoadocs.org/docsets/SafeCast)
+[![Platform](https://img.shields.io/cocoapods/p/SafeCast.svg?style=flat)](http://cocoadocs.org/docsets/SafeCast)
 
 * Cast objects in Objective-C, not in C
 * Enumerate objects in collections only if they're of a certain kind, or conform to a protocol
@@ -9,7 +12,7 @@
 
 Objective-C is C, and C is perilous. Don't blindly cast objects. Stick to high-level language features, and write more readable code.
 
-Quite simply, you can do things like this:
+Do things like this:
 
 ```
 NSMutableArray *mArray = [NSMutableArray safe_cast:array];
@@ -50,15 +53,15 @@ Well, first of all, it's _really_ small. The documentation in the headers is _mu
 
 ### Easy to integrate 
 
-When it's done, I'll release SafeCast as a [CocoaPod](http://guides.cocoapods.org/using/getting-started.html). Until the podspec is published, you'll have to include a reference to this repository directly in your Podfile:
+SafeCast is available as a [CocoaPod](http://guides.cocoapods.org/using/getting-started.html).
 
 ```
-pod 'SafeCase', git: 'https://github.com/fcanas/SafeCast.git'
+pod 'SafeCast'
 ```
 
 ### Be concice and direct with your intent
 
-It definitely takes fewer lines of code. In my opinion it's easier to read and think about than the more verbose, way of doing it safely. It keeps your type-safety checks up front and at a high level.
+It definitely takes fewer lines of code. In my opinion it's easier to read and think about than the more verbose way of doing it safely. It keeps your type-safety checks up front and at a high level.
 
 ### Be Safe
 

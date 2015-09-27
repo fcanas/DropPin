@@ -1,0 +1,1 @@
+../../../SafeCast/Classes/SafeCastIndexedEnumerationDeprecatedSupport.h

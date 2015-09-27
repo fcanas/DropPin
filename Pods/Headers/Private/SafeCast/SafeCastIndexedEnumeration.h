@@ -1,0 +1,1 @@
+../../../SafeCast/Classes/SafeCastIndexedEnumeration.h
